@@ -86,6 +86,10 @@ Rate limiter should be implemented as **middleware** in the request pipeline:
 ### 2. Leaking Bucket
 **How it works:** Requests are added to a queue (bucket) and processed at a fixed rate. If bucket is full, new requests are rejected.
 
+**Parameters**
+- `bucket_capacity` - Queue size
+- `outflow_rate` - Number of requests processed at a fixed rate.
+
 **Pros:** Smooth traffic flow, prevents burst
 **Cons:** Less flexible for traffic spikes
 
